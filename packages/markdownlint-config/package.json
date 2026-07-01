@@ -1,0 +1,24 @@
+{
+  "name": "markdownlint-config",
+  "version": "0.0.0",
+  "description": "基于 markdownlint 配置的基础通用的Markdown规范",
+  "license": "ISC",
+  "author": "hechenglong <1104907547@qq.com>",
+  "main": "index.json",
+  "files": [
+    "index.json"
+  ],
+  "keywords": [
+    "markdown",
+    "lint"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "",
+  "repository": { },
+  "bugs": { },
+  "peerDependencies": { 
+    "markdownlint": "^0.41.0"
+  }
+}
