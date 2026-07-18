@@ -9,7 +9,13 @@
 需要先行安装 [markdownlint](https://www.npmjs.com/package/markdownlint)：
 
 ```bash
-npm install markdownlint-config markdownlint --save-dev
+npm install markdownlint --save-dev
+```
+
+安装本包：
+
+```bash
+npm install markdownlint-config --save-dev
 ```
 
 ## 使用
@@ -18,6 +24,6 @@ npm install markdownlint-config markdownlint --save-dev
 
 ```json
 {
-  "extends": "markdownlint-config"
+  "extends": "markdownlint-config-hcl"
 }
 ```

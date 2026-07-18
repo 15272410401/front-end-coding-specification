@@ -1,6 +1,6 @@
-# `commitlint-config`
+# `commitlint-config-hcl`
 
-> 基础通用的Git Commitlint规范
+> 基础通用的 Git Commitlint 规范
 
 支持配套的 [commitlint 配置](https://commitlint.js.org/#/concepts-shareable-config)，用于对 `git commit message` 进行校验。
 
@@ -9,7 +9,13 @@
 使用时，需要安装 [@commitlint/cli](https://www.npmjs.com/package/@commitlint/cli)
 
 ```bash
-npm install commitlint-config @commitlint/cli --save-dev
+npm install @commitlint/cli --save-dev
+```
+
+安装本包：
+
+```bash
+npm install commitlint-config-hcl --save-dev
 ```
 
 ## 使用
@@ -18,7 +24,7 @@ npm install commitlint-config @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-  extends: ['commitlint-config'],
+  extends: ['commitlint-config-hcl'],
 };
 ```
 

@@ -1,0 +1,30 @@
+{
+  "name": "commitlint-config-hcl",
+  "version": "0.0.0",
+  "description": "基于 commitlint 配置的基础通用的Git Commitlint规范",
+  "license": "ISC",
+  "author": "hechenglong <1104907547@qq.com>",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "commit",
+    "lint"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "homepage": "https://github.com/15272410401/front-end-coding-specification#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/15272410401/front-end-coding-specification.git"
+  },
+  "bugs": { 
+    "url": "https://github.com/15272410401/front-end-coding-specification/issues"
+  },
+  "dependencies": { 
+    "conventional-changelog-conventionalcommits": "^10.2.0"
+  }
+}

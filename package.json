@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "description": "前端编码规范工程化",
   "workspaces": [
     "packages/*"
   ],
@@ -9,10 +10,10 @@
     "prepare": "husky",
     "init": "pnpm install",
     "clean": "lerna clean && rm -rf node_modules",
+    "clean:win": "lerna clean && rd /s /q node_modules",
     "test": "lerna run test",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
     "deploy": "bash deploy.sh",
     "publish": "lerna publish",
     "lint": "markdownlint README.md",

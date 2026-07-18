@@ -28,15 +28,15 @@
 
 | 规范                                                         | Lint 工具                                                    | npm 包                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------ |
-| JavaScript 编码规范 <br/>TypeScript 编码规范 <br/>Node 编码规范 | [ESLint](https://eslint.org/)                                | [eslint-config](*)       |
-| CSS 编码规范                                                 | [stylelint](https://stylelint.io/)                           | [stylelint-config](*)    |
-| Git 规范                                                     | [commitlint](https://commitlint.js.org/#/)                   | [commitlint-config](*)   |
-| 文档规范                                                     | [markdownlint](https://github.com/DavidAnson/markdownlint)   | [markdownlint-config](*) |
-| Eslint 插件                                                  | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [eslint-plugin](*)       |
+| JavaScript 编码规范 <br/>TypeScript 编码规范 <br/>Node 编码规范 | [ESLint](https://eslint.org/)                                | [eslint-config-hcl](https://www.npmjs.com/package/eslint-config-hcl)       |
+| CSS 编码规范                                                 | [stylelint](https://stylelint.io/)                           | [stylelint-config-hcl](https://www.npmjs.com/package/stylelint-config-hcl)    |
+| Git 规范                                                     | [commitlint](https://commitlint.js.org/#/)                   | [commitlint-config-hcl](https://www.npmjs.com/package/commitlint-config-hcl)   |
+| 文档规范                                                     | [markdownlint](https://github.com/DavidAnson/markdownlint)   | [markdownlint-config-hcl](https://www.npmjs.com/package/markdownlint-config-hcl)   |
+| Eslint 插件                                                  | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [eslint-plugin-hcl](https://www.npmjs.com/package/eslint-plugin-hcl)       |
 
-[encode-fe-lint](*) 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。
+[front-coding-spec-lint](https://www.npmjs.com/package/front-coding-spec-lint) 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。
 
-您可以使用[encode-fe-lint](*) 方便地为项目接入全部规范。
+您可以使用[front-coding-spec-lint](https://www.npmjs.com/package/front-coding-spec-lint) 方便地为项目接入全部规范。
 
 ## 其他
 
@@ -66,6 +66,6 @@ pnpm run changelog
 
 ## :email: 联系
 
-- **GitHub**: <>
+- **GitHub**: <https://github.com/15272410401/front-end-coding-specification>
 
 </br>

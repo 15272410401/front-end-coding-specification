@@ -1,4 +1,4 @@
-# `commitlint-config`
+# `commitlint-config-hcl`
 
 > 基础通用的Git Commitlint规范
 
@@ -9,7 +9,7 @@
 使用时，需要安装 [@commitlint/cli](https://www.npmjs.com/package/@commitlint/cli)
 
 ```bash
-npm install commitlint-config @commitlint/cli --save-dev
+npm install commitlint-config-hcl @commitlint/cli --save-dev
 ```
 
 ## 使用
@@ -18,7 +18,7 @@ npm install commitlint-config @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-  extends: ['commitlint-config'],
+  extends: ['commitlint-config-hcl'],
 };
 ```
 

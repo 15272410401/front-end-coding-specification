@@ -1,0 +1,34 @@
+import hclConfig from '<%= eslintType === 'index' ? 'eslint-config-hcl' : `eslint-config-hcl/${eslintType}` %>';
+<%_ if (enablePrettier) { _%>
+import prettier from 'eslint-config-prettier';
+<%_ } _%>
+
+export default [
+  ...hclConfig,
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/build/**',
+      '**/coverage/**',
+      '**/.git/**',
+      '**/*.min.js',
+      '**/*.d.ts',
+      '**/.eslintcache',
+      '**/pnpm-lock.yaml',
+      '**/package-lock.json',
+      '**/yarn.lock',
+    ],
+  },
+  // 通用规则覆盖
+  {
+    files: ['**/*.{js,ts,vue}'],
+    rules: {
+      // 在这里覆盖 hcl 的规则
+      // 例如：'no-console': 'warn',
+    },
+  },
+  <%_ if (enablePrettier) { _%>
+  prettier,
+  <%_ } _%>
+];

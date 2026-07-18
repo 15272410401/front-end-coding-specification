@@ -1,0 +1,40 @@
+{
+  "name": "eslint-plugin-hcl",
+  "version": "0.0.0",
+  "description": "自定义 eslint 插件",
+  "license": "ISC",
+  "author": "hechenglong <1104907547@qq.com>",
+  "main": "index.js",
+  "files": [
+    "configs/",
+    "rules/",
+    "README.md"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-plugin"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm run test"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "homepage": "https://github.com/15272410401/front-end-coding-specification#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/15272410401/front-end-coding-specification.git"
+  },
+  "bugs": {
+    "url": "https://github.com/15272410401/front-end-coding-specification/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "jest": "^30.4.2"
+  }
+}

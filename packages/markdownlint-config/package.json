@@ -1,7 +1,7 @@
 {
-  "name": "markdownlint-config",
+  "name": "markdownlint-config-hcl",
   "version": "0.0.0",
-  "description": "基于 markdownlint 配置的基础通用的Markdown规范",
+  "description": "基于 markdownlint 配置的基础通用的 Markdown 规范",
   "license": "ISC",
   "author": "hechenglong <1104907547@qq.com>",
   "main": "index.json",
@@ -13,11 +13,17 @@
     "lint"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
-  "homepage": "",
-  "repository": { },
-  "bugs": { },
+  "homepage": "https://github.com/15272410401/front-end-coding-specification#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/15272410401/front-end-coding-specification.git"
+  },
+  "bugs": { 
+    "url": "https://github.com/15272410401/front-end-coding-specification/issues"
+  },
   "peerDependencies": { 
     "markdownlint": "^0.41.0"
   }

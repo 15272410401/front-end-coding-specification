@@ -1,0 +1,64 @@
+{
+  "name": "eslint-config-hcl",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "基于 ESLint 9 扁平配置的基础通用 JavaScript、TypeScript、Vue 编码规范",
+  "license": "ISC",
+  "author": "hechenglong <1104907547@qq.com>",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./typescript": "./typescript/index.js",
+    "./typescript/vue": "./typescript/vue.js",
+    "./vue": "./vue.js",
+    "./es5": "./essential/es5.js",
+    "./essential": "./essential/index.js",
+    "./essential/vue": "./essential/vue.js",
+    "./essential/typescript": "./essential/typescript/index.js",
+    "./essential/typescript/vue": "./essential/typescript/vue.js"
+  },
+  "files": [
+    "index.js",
+    "typescript/",
+    "vue.js",
+    "essential/",
+    "rules/"
+  ],
+  "keywords": [
+    "eslint",
+    "javascript",
+    "typescript",
+    "vue",
+    "lint"
+  ],
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "mocha ./__tests__/*.test.js --timeout 5000",
+    "print-config": "eslint --print-config ./index.js > ./print-config.json"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "homepage": "https://github.com/15272410401/front-end-coding-specification#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/15272410401/front-end-coding-specification.git"
+  },
+  "bugs": {
+    "url": "https://github.com/15272410401/front-end-coding-specification/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.24.5",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "eslint": "^9.39.5",
+    "eslint-import-resolver-typescript": "^4.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-vue": "^9.33.0",
+    "mocha": "^11.7.6",
+    "typescript": "^6.0.3",
+    "vue-eslint-parser": "^9.4.3"
+  }
+}
