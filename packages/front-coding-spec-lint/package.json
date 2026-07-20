@@ -1,6 +1,6 @@
 {
   "name": "front-coding-spec-lint",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.2-alpha.0",
   "description": "一个关于前端编码规范的 CLI 工具，用于创建或接入前端项目的编码规范配置",
   "license": "ISC",
   "author": "hechenglong <1104907547@qq.com>",
@@ -23,7 +23,7 @@
     "prepublishOnly": "npm run test"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "homepage": "https://github.com/15272410401/front-end-coding-specification#readme",
@@ -93,5 +93,5 @@
     "rimraf": "^6.1.3",
     "typescript": "^6.0.3"
   },
-  "gitHead": "0d52bed118efc6715b680c4aa843b2e1b11a6af9"
+  "gitHead": "61e79e93cc2171e5f9fcf227e004d2f96a50d476"
 }
