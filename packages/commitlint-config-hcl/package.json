@@ -1,6 +1,6 @@
 {
   "name": "commitlint-config-hcl",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.0",
   "description": "基于 commitlint 配置的基础通用的Git Commitlint规范",
   "license": "ISC",
   "author": "hechenglong <1104907547@qq.com>",
