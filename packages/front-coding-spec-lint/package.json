@@ -1,6 +1,6 @@
 {
   "name": "front-coding-spec-lint",
-  "version": "0.0.3-alpha.0",
+  "version": "0.0.4-alpha.0",
   "description": "一个关于前端编码规范的 CLI 工具，用于创建或接入前端项目的编码规范配置",
   "license": "ISC",
   "author": "hechenglong <1104907547@qq.com>",
