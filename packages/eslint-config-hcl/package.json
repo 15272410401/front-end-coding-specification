@@ -60,5 +60,6 @@
     "mocha": "^11.7.6",
     "typescript": "^6.0.3",
     "vue-eslint-parser": "^9.4.3"
-  }
+  },
+  "gitHead": "f5bae002ce888016a2ecc823b59d7f8f98b534c9"
 }

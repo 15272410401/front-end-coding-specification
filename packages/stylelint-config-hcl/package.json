@@ -41,5 +41,6 @@
   "peerDependencies": {
     "stylelint": ">=17.14.0",
     "stylelint-scss": ">=7.2.0"
-  }
+  },
+  "gitHead": "f5bae002ce888016a2ecc823b59d7f8f98b534c9"
 }

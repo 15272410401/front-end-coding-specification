@@ -36,5 +36,6 @@
   "devDependencies": {
     "eslint": "^9.39.5",
     "jest": "^30.4.2"
-  }
+  },
+  "gitHead": "f5bae002ce888016a2ecc823b59d7f8f98b534c9"
 }

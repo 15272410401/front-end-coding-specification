@@ -4,3 +4,8 @@ allowBuilds:
   esbuild: true
   nx: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - commitlint-config-hcl@0.0.3-alpha.0
+  - eslint-config-hcl@0.0.3-alpha.0
+  - markdownlint-config-hcl@0.0.3-alpha.0
+  - stylelint-config-hcl@0.0.3-alpha.0
