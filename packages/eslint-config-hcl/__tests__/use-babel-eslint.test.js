@@ -1,16 +1,20 @@
-const assert = require('assert');
-const eslint = require('eslint');
-const path = require('path');
+import { fileURLToPath } from 'url';
+import assert from 'assert'
+import eslint from 'eslint'
+import path from 'path'
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('test/use-babel-eslint.test.js', () => {
   it('@babel/eslint-parser 在 Vue 项目中能正常运行', async () => {
-    const configPath = './vue.js';
+    const configPath = path.resolve(__dirname, '../vue.js');
     const filePath = path.join(__dirname, './fixtures/vue.vue');
 
     const cli = new eslint.ESLint({
       overrideConfigFile: configPath,
-      useEslintrc: false,
       ignore: false,
+      cache: false,
     });
 
     const results = await cli.lintFiles([filePath]);

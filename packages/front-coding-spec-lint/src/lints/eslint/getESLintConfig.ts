@@ -81,15 +81,18 @@ export async function getESLintConfig(opts: ScanOptions, pkgContent: PackageJson
   // eslint-config-prettier 会禁用所有与 Prettier 冲突的 ESLint 规则
   if (config.enablePrettier) {
     try {
-      const prettierConfig = await import('eslint-config-prettier');
-      // 兼容不同版本的 eslint-config-prettier 导出格式
+      const prettierConfig = await import('eslint-config-prettier') as any;
+      // 兼容不同导出格式
+      let prettierArray: any[] = [];
       if (Array.isArray(prettierConfig.default)) {
-        flatConfig.push(...prettierConfig.default);
+        prettierArray = prettierConfig.default;
       } else if (Array.isArray(prettierConfig)) {
-        flatConfig.push(...prettierConfig);
+        prettierArray = prettierConfig;
       } else if (typeof prettierConfig === 'object') {
-        flatConfig.push(prettierConfig);
+        prettierArray = [prettierConfig];
       }
+      
+      flatConfig.push(...prettierArray);
     } catch (e) {
       // 如果 eslint-config-prettier 未安装，静默处理
     }

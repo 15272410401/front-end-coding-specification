@@ -1,7 +1,12 @@
 const rule = require('../../rules/no-secret-info');
 const { RuleTester } = require('eslint');
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  languageOptions: {
+    ecmaVersion: 2022,
+    sourceType: 'module',
+  },
+});
 
 ruleTester.run('no-secret-info', rule, {
   valid: [
@@ -25,7 +30,7 @@ ruleTester.run('no-secret-info', rule, {
       code: "var token = 'xxxx';",
       errors: [
         {
-          message: '检测到 "xxxx" 是一个可能的密钥，请检查！',
+          message: '检测 "xxxx" 可能是一个密钥，请检查！',
         },
       ],
     },
@@ -37,7 +42,7 @@ ruleTester.run('no-secret-info', rule, {
     `,
       errors: [
         {
-          message: '检测到 "xxxx" 是一个可能的密钥，请检查！',
+          message: '检测 "xxxx" 可能是一个密钥，请检查！',
         },
       ],
     },

@@ -10,6 +10,6 @@ export default {
 
     '@typescript-eslint/adjacent-overload-signatures': 'warn',
 
-    '@typescript-eslint/no-parameter-properties': 'warn',
+    '@typescript-eslint/parameter-properties': 'warn',
   },
 };

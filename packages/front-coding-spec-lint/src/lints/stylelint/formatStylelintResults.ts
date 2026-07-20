@@ -43,7 +43,7 @@ export function formatStylelintResults(results: LintResult[], quiet: boolean): S
 
         // 4. 返回单个文件的检查结果
         return {
-            filePath: source,
+            filePath: source as string,
             messages,
             errorCount,
             warningCount,

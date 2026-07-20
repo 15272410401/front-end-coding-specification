@@ -46,7 +46,7 @@ export function formatMarkdownlintResults(
           line: lineNumber,
           column: Array.isArray(errorRange) ? errorRange[0] : 1,
           rule: ruleNames[0],
-          url: ruleInformation,
+          url: ruleInformation as string,
           message: ruleDescription,
           errored: false,
         };

@@ -1,6 +1,10 @@
-const assert = require('assert');
-const stylelint = require('stylelint');
-const path = require('path');
+import assert from 'assert';
+import stylelint from 'stylelint';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('test/stylelint-config-hcl.test.js', () => {
   it('默认规则', async () => {
@@ -13,7 +17,7 @@ describe('test/stylelint-config-hcl.test.js', () => {
     });
 
     if (result && result.errored) {
-      const filesResult = JSON.parse(result.output || '[]') || [];
+      const filesResult = JSON.parse(result.report || '[]') || [];
       filesResult.forEach((fileResult) => {
         console.log(`========= ${filePaths} ==========`);
         console.log(fileResult.warnings);
@@ -33,7 +37,7 @@ describe('test/stylelint-config-hcl.test.js', () => {
     });
 
     if (result && result.errored) {
-      const filesResult = JSON.parse(result.output || '[]') || [];
+      const filesResult = JSON.parse(result.report || '[]') || [];
       filesResult.forEach((fileResult) => {
         console.log(`========= ${filePaths} ==========`);
         console.log(fileResult.warnings);
@@ -53,7 +57,7 @@ describe('test/stylelint-config-hcl.test.js', () => {
     });
 
     if (result && result.errored) {
-      const filesResult = JSON.parse(result.output || '[]') || [];
+      const filesResult = JSON.parse(result.report || '[]') || [];
       filesResult.forEach((fileResult) => {
         console.log(`========= ${filePaths} ==========`);
         console.log(fileResult.warnings);
@@ -73,7 +77,7 @@ describe('test/stylelint-config-hcl.test.js', () => {
     });
 
     if (result && result.errored) {
-      const filesResult = JSON.parse(result.output || '[]') || [];
+      const filesResult = JSON.parse(result.report || '[]') || [];
       filesResult.forEach((fileResult) => {
         console.log(`========= ${filePaths} ==========`);
         console.log(fileResult.warnings);

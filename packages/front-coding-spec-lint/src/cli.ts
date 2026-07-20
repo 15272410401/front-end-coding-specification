@@ -28,9 +28,9 @@ const cwd = process.cwd();
  * 若无 node_modules，则帮用户 install（否则会找不到 config）
  */
 const installDepsIfThereNo = async () => {
-  const lintConfigFiles = [].concat(
-    glob.sync('.eslintrc?(.@(js|yaml|yml|json))', { cwd }),
-    glob.sync('.stylelintrc?(.@(js|yaml|yml|json))', { cwd }),
+  const lintConfigFiles = ([] as string[]).concat(
+    glob.sync('eslint.config.{js,mjs,cjs,ts}', { cwd }),
+    glob.sync('stylelint.config.{js,mjs,cjs,ts}', { cwd }),
     glob.sync('.markdownlint(.@(yaml|yml|json))', { cwd }),
   );
   const nodeModulesPath = path.resolve(cwd, 'node_modules');
@@ -85,14 +85,14 @@ program
       outputReport: Boolean(cmd.outputReport),
       ignore: cmd.ignore, // 对应 --no-ignore
     });
-    let type = 'succeed';
     if (runErrors.length > 0 || errorCount > 0) {
-      type = 'fail';
+      checking.fail();
     } else if (warningCount > 0) {
-      type = 'warn';
+      checking.warn();
+    } else {
+      checking.succeed();
     }
 
-    checking[type]();
     if (results.length > 0) printReport(results, false);
 
     // 输出 lint 运行错误

@@ -1,7 +1,12 @@
 const rule = require('../../rules/no-broad-semantic-versioning.js');
 const { RuleTester } = require('eslint');
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  languageOptions: {
+    ecmaVersion: 2022,
+    sourceType: 'module',
+  },
+});
 
 ruleTester.run('no-broad-semantic-versioning', rule, {
   valid: [

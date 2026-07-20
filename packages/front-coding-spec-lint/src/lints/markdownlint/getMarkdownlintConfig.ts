@@ -40,7 +40,7 @@ export function getMarkdownlintConfig(opts: ScanOptions, pkgContent: PackageJson
 
     if (lintConfigFiles.length === 0) {
       // 4.2 如果没有配置文件，使用默认的 markdownlint-config-hcl 配置
-      lintConfig.config = markdownLintConfig;
+      lintConfig.config = markdownLintConfig as any;
     } else {
       // 4.3 如果有配置文件，读取并使用
       lintConfig.config = readConfig(path.resolve(cwd, lintConfigFiles[0]));

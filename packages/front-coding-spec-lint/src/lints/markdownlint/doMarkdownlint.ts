@@ -106,7 +106,7 @@ async function formatMarkdownFile(filename: string, errors: LintError[], cwd: st
     const originalText = await fsExtra.readFile(absolutePath, 'utf8');
 
     // 5. 应用修复
-    const fixedText = markdownlintRuleHelpers.applyFixes(originalText, fixes);
+    const fixedText = markdownlintRuleHelpers.applyFixes(originalText, fixes as any);
 
     // 6. 如果内容有变化，写回文件
     if (originalText !== fixedText) {

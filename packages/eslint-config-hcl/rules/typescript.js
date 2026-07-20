@@ -455,8 +455,10 @@ export default {
 
     /**
      * 【关闭】禁止给类的构造函数的参数添加修饰符
+     * 已废弃，升级后去除 no-
      */
-    '@typescript-eslint/no-parameter-properties': 'off',
+    // '@typescript-eslint/no-parameter-properties': 'off',
+    '@typescript-eslint/parameter-properties': 'off',
 
     /**
      * 【推荐】不建议使用 require 引入模块，使用 import

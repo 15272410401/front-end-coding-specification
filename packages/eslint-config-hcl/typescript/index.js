@@ -1,7 +1,7 @@
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
-import importResolverTypescript from 'eslint-import-resolver-typescript';
+import * as importResolverTypescript from 'eslint-import-resolver-typescript';
 
 import baseConfig from '../index.js';
 import tsRules from '../rules/typescript.js';

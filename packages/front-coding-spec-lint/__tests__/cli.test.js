@@ -1,54 +1,62 @@
-const path = require('path');
-const fs = require('fs-extra');
-const execa = require('execa');
-const packageJson = require('../package.json');
+import path from 'path';
+// fs-extra => 提供了 fs 模块的额外功能，如读取 JSON 文件等
+import fsExtra from 'fs-extra';
+// execa => 跨平台命令执行工具
+import { execa } from 'execa';
+import { fileURLToPath } from 'url';
+import { expect } from 'chai';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const packageJson = fsExtra.readJsonSync(path.resolve(__dirname, '../package.json'));
 
 const cli = (args, options) => {
   return execa('node', [path.resolve(__dirname, '../lib/cli.js'), ...args], options);
 };
 
-test('--version should output right version', async () => {
+it('--version should output right version', async () => {
   const { stdout } = await cli(['--version']);
-  expect(stdout).toBe(packageJson.version);
+  expect(stdout).to.equal(packageJson.version);
 });
 
 describe(`'fix' command`, () => {
   const dir = path.resolve(__dirname, './fixtures/autofix');
   const outputFilePath = path.resolve(dir, './temp/temp.js');
-  const errorFileContent = fs.readFileSync(path.resolve(dir, './semi-error.js'), 'utf8');
-  const expectedFileContent = fs.readFileSync(path.resolve(dir, './semi-expected.js'), 'utf8');
+  const errorFileContent = fsExtra.readFileSync(path.resolve(dir, './semi-error.js'), 'utf8');
+  const expectedFileContent = fsExtra.readFileSync(path.resolve(dir, './semi-expected.js'), 'utf8');
 
   beforeEach(() => {
-    fs.outputFileSync(outputFilePath, errorFileContent, 'utf8');
+    fsExtra.outputFileSync(outputFilePath, errorFileContent, 'utf8');
   });
 
-  test('should autofix problematic code', async () => {
+  it('should autofix problematic code', async () => {
     await cli(['fix'], {
       cwd: path.dirname(`${dir}/result`),
     });
-    expect(fs.readFileSync(outputFilePath, 'utf8')).toEqual(expectedFileContent);
+    expect(fsExtra.readFileSync(outputFilePath, 'utf8')).to.deep.equal(expectedFileContent);
   });
 
   afterEach(() => {
-    fs.removeSync(`${dir}/temp`);
+    fsExtra.removeSync(`${dir}/temp`);
   });
 });
 
 describe(`'exec' command`, () => {
   const semverRegex = /(\d+)\.(\d+)\.(\d+)/;
 
-  test(`'exec eslint' should work as expected`, async () => {
+  it(`'exec eslint' should work as expected`, async () => {
     const { stdout } = await cli(['exec', 'eslint', '--version']);
-    expect(stdout).toMatch(semverRegex);
+    expect(stdout).to.match(semverRegex);
   });
 
-  test(`'exec stylelint' should work as expected`, async () => {
+  it(`'exec stylelint' should work as expected`, async () => {
     const { stdout } = await cli(['exec', 'stylelint', '--version']);
-    expect(stdout).toMatch(semverRegex);
+    expect(stdout).to.match(semverRegex);
   });
 
-  test(`'exec commitlint' should work as expected`, async () => {
+  it(`'exec commitlint' should work as expected`, async () => {
     const { stdout } = await cli(['exec', 'commitlint', '--version']);
-    expect(stdout).toMatch(semverRegex);
+    expect(stdout).to.match(semverRegex);
   });
 });

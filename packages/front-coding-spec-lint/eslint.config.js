@@ -1,8 +1,34 @@
 import hclConfig from 'eslint-config-hcl';
 import prettier from 'eslint-config-prettier';
+import tsParser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
+
 
 export default [
   ...hclConfig,
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      parser: tsParser,
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      import: importPlugin,
+    },
+  },
+  {
+    settings: {
+      'import/resolver': {
+        node: {},
+      },
+    },
+    rules: {
+      'import/no-unresolved': ['error', {
+        ignore: ['@typescript-eslint/*'],
+      }],
+    },
+  },
   {
     ignores: [
       '**/node_modules/**',

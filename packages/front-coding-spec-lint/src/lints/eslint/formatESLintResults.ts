@@ -28,8 +28,8 @@ export function formatESLintResults(results: ESLint.LintResult[], quiet: boolean
             return {
               line,
               column,
-              rule: ruleId,
-              url: rulesMeta[ruleId]?.docs?.url || '',
+              rule: ruleId || '',
+              url: rulesMeta[ruleId as string]?.docs?.url || '',
               message: message.replace(/([^ ])\.$/u, '$1'),
               errored: fatal || severity === 2,
             };

@@ -1,7 +1,12 @@
 const rule = require('../../rules/no-js-in-ts-project');
 const { RuleTester } = require('eslint');
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  languageOptions: {
+    ecmaVersion: 2022,
+    sourceType: 'module',
+  },
+});
 
 ruleTester.run('no-js-in-ts-project', rule, {
   valid: [
