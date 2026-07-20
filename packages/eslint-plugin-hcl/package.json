@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-hcl",
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.3-alpha.0",
   "description": "自定义 eslint 插件",
   "license": "ISC",
   "author": "hechenglong <1104907547@qq.com>",
@@ -36,6 +36,5 @@
   "devDependencies": {
     "eslint": "^9.39.5",
     "jest": "^30.4.2"
-  },
-  "gitHead": "24210b5aa3517ed09a8bdb0c1b79b1cb428b9856"
+  }
 }
